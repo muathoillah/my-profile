@@ -18,6 +18,31 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
+### Docker
+
+Build the production image locally:
+
+```bash
+docker build -t muathoillah/my-profile:latest .
+```
+
+Run the container:
+
+```bash
+docker run --rm -p 3000:3000 muathoillah/my-profile:latest
+```
+
+Push the image to Docker Hub:
+
+```bash
+docker login
+docker push muathoillah/my-profile:latest
+```
+
+### Continuous integration
+
+This repository includes a GitHub Actions workflow at `.github/workflows/ci.yml` that runs on pull requests and on pushes to `main`. It installs dependencies, builds the Next.js app, and runs lint checks.
+
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
